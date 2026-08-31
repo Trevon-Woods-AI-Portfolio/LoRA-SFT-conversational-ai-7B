@@ -395,7 +395,7 @@ flowchart TD
 ---
 # ⚙️ Training Loss
 
-<img src="assets/training_loss.jpeg" width="200%" alt="Convo Training">
+<img src="assets/training_loss.jpeg" width="100%" alt="Convo Training">
 
 ---
 
