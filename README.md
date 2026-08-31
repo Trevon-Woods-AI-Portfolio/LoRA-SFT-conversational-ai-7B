@@ -393,6 +393,11 @@ flowchart TD
 17. Push the resulting adapter to the Hugging Face Hub.
 
 ---
+# ⚙️ Training Loss
+
+<img src="assets/training_loss.jpeg" width="200%" alt="Convo Training">
+
+---
 
 # ⚙️ Training Configuration
 
