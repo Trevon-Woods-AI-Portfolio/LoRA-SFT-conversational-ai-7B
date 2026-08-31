@@ -336,7 +336,7 @@ The causal language-model objective is:
 \mathcal{L}
 =
 -\sum_{t=1}^{T}
-\log P_{\theta}(x_t \mid x_{<t})
+\log P_{\theta}\left(x_t \mid x_{1:t-1}\right)
 ```
 
 where:
