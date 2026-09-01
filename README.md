@@ -352,22 +352,21 @@ where:
 
 ```mermaid
 flowchart TD
-    A["💬 OpenAssistant Conversation"] --> B["Tokenizer"]
+    A["OpenAssistant Conversation"] --> B["Tokenizer"]
     B --> C["Token IDs"]
-    C --> D["Pad / Truncate to ≤512 Tokens"]
+    C --> D["Pad or Truncate to 512 Tokens"]
 
-    D --> E["🧠 8-bit Mistral-7B"]
-    F["🔧 LoRA q_proj / v_proj"] --> E
+    D --> E["8-bit Mistral 7B"]
+    F["LoRA Adapter"] --> E
 
-    E --> G["Next-Token Predictions"]
-    G --> H["Causal LM Loss"]
-    D --> H
+    E --> G["Next Token Predictions"]
+    G --> H["Causal Language Model Loss"]
 
     H --> I["Backpropagation"]
     I --> J["Update LoRA Parameters"]
-    J --> K["Cosine LR Schedule"]
+    J --> K["Cosine Learning Rate Schedule"]
     K --> L["Evaluation Every 200 Steps"]
-    L --> M["🤗 Push Adapter to Hugging Face"]
+    L --> M["Push Adapter to Hugging Face"]
 ```
 
 ## Step by Step
