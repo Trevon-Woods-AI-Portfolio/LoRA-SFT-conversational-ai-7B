@@ -92,22 +92,20 @@ Mistral-7B-v0.3 is a **decoder-only causal language model**. It generates text b
 
 ```mermaid
 flowchart LR
-    A["💬 User Prompt"] --> B["Tokenizer"]
+    A["User Prompt"] --> B["Tokenizer"]
     B --> C["Token IDs"]
-    C --> D["🧠 Mistral-7B-v0.3"]
+    C --> D["Mistral 7B Base Model"]
 
-    E["🔧 LoRA Adapter"] --> F["Attention q_proj"]
-    E --> G["Attention v_proj"]
+    E["LoRA Adapter"] --> F["Query Projection"]
+    E --> G["Value Projection"]
 
     F --> D
     G --> D
 
-    D --> H["Next-Token Logits"]
+    D --> H["Next Token Logits"]
     H --> I["Token Selection"]
-    I --> J["Generated Token"]
-    J --> D
-
-    J --> K["🤖 Conversational Response"]
+    I --> J["Generated Tokens"]
+    J --> K["Conversational Response"]
 ```
 
 During inference, the adapter does **not replace Mistral**.
